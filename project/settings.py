@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-vi17#qc@e=$igq7zk4o^#-0zg%&t&94n(=poaim5y1p@h5azjj
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['https://bookuz.pythonanywhere.com/']
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -54,13 +54,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-CORS_ALLOWED_ORIGINS = [
-    "https://example.com",
-    "https://sub.example.com",
-    "http://localhost:8080",
-    "http://127.0.0.1:9000",
-    'http://bookuz.pythonanywhere.com/'
-]
+CORS_ALLOW_ALL_ORIGINS = True
 ROOT_URLCONF = 'project.urls'
 
 TEMPLATES = [
