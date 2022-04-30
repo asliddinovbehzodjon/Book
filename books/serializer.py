@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from .models import Category, Kitoblar
+from .models import Category, Kitoblar, Reklama
 class KitoblarSerializer(serializers.HyperlinkedModelSerializer):
 
      class Meta:
@@ -11,3 +11,7 @@ class CategorySerializer(serializers.HyperlinkedModelSerializer):
      class Meta:
           model = Category
           fields = ('id','url','name', 'kitoblar',)
+class ReklamaSerializer(serializers.ModelSerializer):
+     class Meta:
+          model = Reklama
+          fields = "__all__"

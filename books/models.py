@@ -1,4 +1,3 @@
-from tabnanny import verbose
 from django.db import models
 from readers.models import Kitobxon
 
@@ -8,8 +7,9 @@ class Category(models.Model):
         def __str__(self):
                  return self.name
         class Meta:
-                 verbose_name = 'Kategoriya '
-                 verbose_name = 'Kategoriyalar '    
+                db_table = "Kategoriyalar"
+                verbose_name = 'Kategoriya '
+                verbose_name = 'Kategoriyalar '    
 class Kitoblar(models.Model):
     
      category = models.ForeignKey(Category,on_delete=models.CASCADE,related_name='kitoblar',default=1)
@@ -50,4 +50,13 @@ class Kitoblar(models.Model):
 
      def __str__(self):
           return self.name
-     
+class Reklama(models.Model):
+    link  = models.CharField(max_length=400,help_text="Telegram kanal linkini tashang")
+    channel_id = models.IntegerField(help_text='Kanal ID sini kiriting')
+    class Meta:
+          db_table = "Kanallar"
+          verbose_name = "Kanal "
+          verbose_name_plural = "Kanallar "
+
+    def __str__(self):
+          return self.link
