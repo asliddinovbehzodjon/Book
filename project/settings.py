@@ -43,11 +43,9 @@ INSTALLED_APPS = [
     'readers.apps.ReadersConfig',
     'rest_framework',
      "corsheaders",
-     'controlcenter',
+    
 ]
-CONTROLCENTER_DASHBOARDS = (
-    ('mydash', 'books.dashboards.MyDashboard'),
-)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
