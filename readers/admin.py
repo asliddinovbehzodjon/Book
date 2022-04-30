@@ -28,5 +28,5 @@ class KitobxonAdmin(admin.ModelAdmin):
           for user in queryset:
                count = queryset.update(starred = 12)
                user.save()
-               self.message_user(request,f"{} ta kitobxon faol kitobxonlar safiga ga qo'shildi".format(count))
+               self.message_user(request,"{} ta kitobxon faol kitobxonlar safiga ga qo'shildi".format(count))
      apply_smart.short_description = "Faol kitobxonlar safiga qo'shish"
