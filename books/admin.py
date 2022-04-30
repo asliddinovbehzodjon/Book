@@ -7,7 +7,7 @@ from .models import Kitoblar,Category,Reklama
 class KitoblarAdmin(admin.ModelAdmin):
      list_display = ['name','author','downloaded','uploader','filesize']
      list_per_page = 10
-     filter_fields = ['category__name']
+     list_filter = ['category__name']
      search_fields= ['name','description','author','user__name']
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
