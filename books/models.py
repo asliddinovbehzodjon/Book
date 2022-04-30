@@ -50,6 +50,7 @@ class Kitoblar(models.Model):
 
      def __str__(self):
           return self.name
+     
 class Reklama(models.Model):
     link  = models.CharField(max_length=400,help_text="Telegram kanal linkini tashang")
     channel_id = models.IntegerField(help_text='Kanal ID sini kiriting')

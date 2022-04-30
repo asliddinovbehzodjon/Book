@@ -8,6 +8,7 @@ class KitobxonAdmin(admin.ModelAdmin):
      list_display = ('image','name','starred','name_colored',)
      search_fields = ['name','starred']
      list_per_page = 10
+     actions = ('apply_smart')
      def name_colored(self, obj):
           html =''
           if obj.starred>10:
@@ -20,3 +21,8 @@ class KitobxonAdmin(admin.ModelAdmin):
           return format_html(html)
      name_colored.admin_order_field = 'Status'
      name_colored.short_description = 'Status'
+     def apply_smart(self, request, queryset):
+          for user in queryset:
+               user.starred = 12 
+               user.save()
+     apply_smart.short_description = "Faol kitobxonlar safiga qo'shish"
