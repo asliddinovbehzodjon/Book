@@ -26,6 +26,7 @@ class KitobxonAdmin(admin.ModelAdmin):
      name_colored.short_description = 'Status'
      def apply_smart(self, request, queryset):
           for user in queryset:
-               user.starred = 12 
+               count = queryset.update(starred = 12)
                user.save()
+               self.message_user(request,f"{} ta kitobxon faol kitobxonlar safiga ga qo'shildi".format(count))
      apply_smart.short_description = "Faol kitobxonlar safiga qo'shish"
