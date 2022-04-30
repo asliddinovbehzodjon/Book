@@ -9,11 +9,12 @@ router.register('books',KitoblarAll)
 router.register('readers',KitobxonAll)
 router.register('search',KitobSearch,basename='search')
 router.register('category',Categories)
-router.register('users',UserAll)
+
 router.register('channels',ReklamaAll)
 router.register('upload',BookUpload)
 
 urlpatterns =[
     path('',include(router.urls)),
+    path('users',UserAll.as_view())
 
 ]
