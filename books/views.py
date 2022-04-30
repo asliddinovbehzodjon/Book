@@ -5,7 +5,7 @@ from django_filters import rest_framework as filters
 from rest_framework import viewsets
 from django.db.models import Q
 from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
-from .models import Category, Kitoblar
+from .models import Category, Kitoblar,Reklama
 from rest_framework import status
 from .serializer import CategorySerializer, KitoblarSerializer, ReklamaSerializer
 
@@ -20,7 +20,7 @@ class Categories(viewsets.ModelViewSet):
     serializer_class = CategorySerializer
     pagination_class = PageNumberPagination
 class ReklamaAll(viewsets.ModelViewSet):
-    queryset = Category.objects.all()[:2]
+    queryset = Reklama.objects.all()[:2]
     serializer_class = ReklamaSerializer
 
          
