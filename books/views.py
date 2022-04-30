@@ -4,6 +4,7 @@ from django_filters import rest_framework as filters
 from rest_framework import viewsets
 from django.db.models import Q
 from rest_framework.permissions import IsAuthenticated
+
 from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
 from .models import Category, Kitoblar,Reklama
 from rest_framework import status
@@ -38,7 +39,7 @@ class KitobSearch(viewsets.ModelViewSet):
 class BookUpload(viewsets.ModelViewSet):
       queryset = Kitoblar.objects.all()
       serializer_class = KitoblarSerializer
-    #   authentication_classes = (IsAuthenticated,)
+      permission_classes = (IsAuthenticated,)
 
 
 
