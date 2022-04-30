@@ -38,7 +38,7 @@ class KitobSearch(viewsets.ModelViewSet):
 class BookUpload(viewsets.ModelViewSet):
       queryset = Kitoblar.objects.all()
       serializer_class = KitoblarSerializer
-      authentication_classes = [IsAuthenticated]
+      authentication_classes = (IsAuthenticated,)
 
 
 
