@@ -8,6 +8,7 @@ class UserResource(resources.ModelResource):
      
     class Meta:
         model = User
+        fields = ('username', 'email','password',)
 @admin.register(Kitobxon)
 class KitobxonAdmin(admin.ModelAdmin):
     
