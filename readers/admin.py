@@ -2,6 +2,12 @@ from django.contrib import admin
 from django.utils.html import format_html
 # Register your models here.
 from .models import Kitobxon
+from django.contrib.auth.models import User
+from import_export import resources
+class UserResource(resources.ModelResource):
+     
+    class Meta:
+        model = User
 @admin.register(Kitobxon)
 class KitobxonAdmin(admin.ModelAdmin):
     

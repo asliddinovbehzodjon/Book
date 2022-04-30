@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'readers.apps.ReadersConfig',
     'rest_framework',
      "corsheaders",
+     'import_export',
      
     
 ]
