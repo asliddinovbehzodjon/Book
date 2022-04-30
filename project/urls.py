@@ -10,8 +10,6 @@ urlpatterns = [
     path('crazy/api/owner/', admin.site.urls),
     path('api/v1/',include('books.urls')),
     path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
-    path('owner/', include('admin_honeypot.urls', namespace='admin_honeypot2')),
-  
-    
+   
 ]
 urlpatterns +=static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
