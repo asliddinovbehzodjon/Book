@@ -7,8 +7,10 @@ admin.site.site_header = "BigBook"
 admin.site.site_title = "BigBook"
 admin.site.site_url = "BigBook"
 urlpatterns = [
-    path('api/owner/', admin.site.urls),
+    path('crazy/api/owner/', admin.site.urls),
     path('api/v1/',include('books.urls')),
+    path('admin/', include('admin_honeypot.urls', namespace='admin_honeypot')),
+    path('owner/', include('admin_honeypot.urls', namespace='admin_honeypot')),
   
     
 ]
