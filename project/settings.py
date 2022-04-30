@@ -32,6 +32,7 @@ INSTALLED_APPS = [
     'rest_framework',
      "corsheaders",
      'import_export',
+     'rest_framework_simplejwt.token_blacklist',
      
     
 ]
@@ -98,7 +99,6 @@ SIMPLE_JWT = {
     'UPDATE_LAST_LOGIN': False,
 
     'ALGORITHM': 'HS256',
-    'SIGNING_KEY': SECRET_KEY,
     'VERIFYING_KEY': None,
     'AUDIENCE': None,
     'ISSUER': None,
