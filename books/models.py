@@ -1,6 +1,6 @@
 from django.db import models
 from readers.models import Kitobxon
-
+DEFAULT = 'static/images/book.png'
 # Create your models here.
 class Category(models.Model):
         name = models.CharField(max_length=5000,help_text="Kategoriyaga nom bering...")
@@ -16,7 +16,7 @@ class Kitoblar(models.Model):
      name = models.CharField(verbose_name="Kitob nomini kiriting",max_length=1000,help_text="Kitob nomini kiriting")
      author = models.TextField(verbose_name="Kitob muallifini yozing",help_text="Kitob muallifini yozing")
      description = models.TextField(verbose_name="Kitob haqida yozing",help_text="Kitob haqida yozing")
-     image = models.ImageField(upload_to='images',default="https://png.pngtree.com/element_our/20190602/ourlarge/pngtree-blue-book-decoration-illustration-image_1387046.jpg")
+     image = models.ImageField(upload_to='images',default=DEFAULT)
      user = models.ForeignKey(Kitobxon,on_delete=models.SET_DEFAULT,default='Kitobxon',related_name='books')
      file = models.FileField(upload_to='books')
      uploaded = models.DateTimeField(auto_now_add=True)
