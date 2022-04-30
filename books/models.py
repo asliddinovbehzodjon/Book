@@ -1,6 +1,6 @@
 from django.db import models
 from readers.models import Kitobxon
-DEFAULT='media/images/book.png'
+DEFAULT='images/book.png'
 # Create your models here.
 class Category(models.Model):
         name = models.CharField(max_length=5000,help_text="Kategoriyaga nom bering...")
