@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
-    
+    'admin_honeypot'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -43,7 +43,7 @@ INSTALLED_APPS = [
     'readers.apps.ReadersConfig',
     'rest_framework',
      "corsheaders",
-     'admin_honeypot'
+     
     
 ]
 
