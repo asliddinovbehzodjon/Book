@@ -3,6 +3,7 @@ from django.shortcuts import render
 from django_filters import rest_framework as filters
 from rest_framework import viewsets
 from django.db.models import Q
+from rest_framework.permissions import IsAuthenticated
 from rest_framework.pagination import PageNumberPagination,LimitOffsetPagination
 from .models import Category, Kitoblar,Reklama
 from rest_framework import status
@@ -34,7 +35,10 @@ class KitobSearch(viewsets.ModelViewSet):
           kitoblar = Kitoblar.objects.filter(Q(name__icontains=params['pk']) |Q(description__icontains=params['pk']) | Q(author__icontains=params['pk']) |  Q(janr__icontains=params['pk']))
           serializer = KitoblarSerializer(kitoblar,many=True,context={'request': request})
           return Response(serializer.data,status=status.HTTP_200_OK)
-
+class BookUpload(viewsets.ModelViewSet):
+      queryset = Kitoblar.objects.all()
+      serializer_class = KitoblarSerializer
+      authentication_classes = [IsAuthenticated]
 
 
 
