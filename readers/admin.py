@@ -8,7 +8,7 @@ class KitobxonAdmin(admin.ModelAdmin):
      list_display = ('image','name','starred','name_colored',)
      search_fields = ['name','starred']
      list_per_page = 10
-     actions = ('apply_smart')
+     actions = ('apply_smart',)
      def name_colored(self, obj):
           html =''
           if obj.starred>10:
