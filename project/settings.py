@@ -32,6 +32,7 @@ ALLOWED_HOSTS = ['*']
 
 INSTALLED_APPS = [
     'jazzmin',
+    'django_admin_env_notice',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -64,6 +65,7 @@ TEMPLATES = [
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                "django_admin_env_notice.context_processors.from_settings",
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -75,7 +77,11 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'project.wsgi.application'
 
-
+ENVIRONMENT_NAME = "Testing server"
+ENVIRONMENT_COLOR = "#53C4EC"
+ENVIRONMENT_ADMIN_SELECTOR = "grp-header"
+ENVIRONMENT_FLOAT = True
+ENVIRONMENT_TEXT_COLOR = "#00FF00"
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
